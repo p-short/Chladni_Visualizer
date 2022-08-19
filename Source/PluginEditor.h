@@ -16,7 +16,8 @@
 /**
 */
 class Chladni_VisualizerAudioProcessorEditor  : public juce::AudioProcessorEditor,
-                                                public juce::Timer
+                                                public juce::Timer,
+                                                public juce::Slider::Listener
 {
 public:
     Chladni_VisualizerAudioProcessorEditor (Chladni_VisualizerAudioProcessor&);
@@ -26,11 +27,19 @@ public:
     void paint (juce::Graphics&) override;
     void resized() override;
     void timerCallback() override;
+    void sliderValueChanged(juce::Slider* slider) override;
 
 private:
     
     const int numParticles {100};
     std::vector <std::unique_ptr <Particle>> particles;
+    
+    juce::Slider nSlider;
+    juce::Slider vSlider;
+    
+    float nSliderVal { 1 };
+    float vSliderVal { 0.05 };
+    
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     Chladni_VisualizerAudioProcessor& audioProcessor;

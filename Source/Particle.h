@@ -33,7 +33,9 @@ public:
 
 private:
     
-    float x, y, xOff, yOff;
+    float x { 0 };
+    float y { 0 };
+    float xOff, yOff;
     float randAmp { 0 };
     float minWalk { 0.002 };
     
