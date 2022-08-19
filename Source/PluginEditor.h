@@ -30,6 +30,7 @@ public:
 private:
     
     const int numParticles {100};
+    std::vector <std::unique_ptr <Particle>> particles;
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     Chladni_VisualizerAudioProcessor& audioProcessor;

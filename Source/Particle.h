@@ -23,8 +23,13 @@ public:
 
     void paint (juce::Graphics&) override;
     void resized() override;
+    
     void move(float mSliderVal, float nSliderVal, float vSliderVal);
     void updateOffsets();
+    
+    //getters
+    float getX();
+    float getY();
 
 private:
     

@@ -42,8 +42,8 @@ void Particle::move(float mSliderVal, float nSliderVal, float vSliderValue)
         randAmp = minWalk;
     }
     
-    x = randFloatInRange(-randAmp, randAmp);
-    y = randFloatInRange(-randAmp, randAmp);
+    x += randFloatInRange(-randAmp, randAmp);
+    y += randFloatInRange(-randAmp, randAmp);
     
     updateOffsets();
 }
@@ -59,3 +59,14 @@ void Particle::updateOffsets()
    xOff = 400 * x; // (this.x + 1) / 2 * width;
    yOff = 400 * y; // (this.y + 1) / 2 * height;
 }
+
+float Particle::getX()
+{
+    return xOff;
+}
+
+float Particle::getY()
+{
+    return yOff;
+}
+
