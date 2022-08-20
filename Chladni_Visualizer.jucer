@@ -15,6 +15,7 @@
             file="Source/PluginEditor.cpp"/>
       <FILE id="Zy6aUF" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
       <FILE id="flolpU" name="chladni.h" compile="0" resource="0" file="Source/chladni.h"/>
+      <FILE id="oqIeyL" name="MyFFT.h" compile="0" resource="0" file="Source/MyFFT.h"/>
     </GROUP>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>

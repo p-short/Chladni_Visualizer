@@ -50,10 +50,10 @@ void Chladni_VisualizerAudioProcessorEditor::paint (juce::Graphics& g)
     g.fillAll (juce::Colours::black.withLightness(0.15f));
     g.setColour(juce::Colours::black);
     g.fillRect(0, 0, 400, 400);
-
+    g.setColour(juce::Colour::fromFloatRGBA (0.996f, 0.509f, 0.549f, 1.0f));
+    
     for (auto i = 0; i < particles.size(); i++)
     {
-        g.setColour(juce::Colour::fromFloatRGBA (0.996f, 0.509f, 0.549f, 1.0f));
         g.fillEllipse(particles[i]->getX(), particles[i]->getY(), 2, 2);
     }
 }
