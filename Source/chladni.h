@@ -21,7 +21,7 @@ float chladni(float x, float y, float a, float b, float m, float n)
     return a * sin(pi * n * x) * sin(pi * m * y) + b * sin(pi * m * x) * sin(pi * n * y);
 }
 
-//method to get a random float within a any range (including negative numbers)
+//method to get a random float within any range (including negative numbers)
 float randFloatInRange(float n1, float n2)
 {
     std::uniform_real_distribution<double> dist {n1, n2};

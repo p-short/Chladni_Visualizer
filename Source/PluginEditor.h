@@ -12,6 +12,18 @@
 #include "PluginProcessor.h"
 #include "Particle.h"
 
+
+struct GetFunFreq
+{
+    GetFunFreq(std::atomic <float>& valueToUse) : value(valueToUse) {}
+    //this is getting called 60 times a second in timer callback
+    float getValue()
+    {
+        return value.load();
+    }
+    std::atomic <float>& value;
+};
+
 //==============================================================================
 /**
 */
@@ -28,10 +40,13 @@ public:
     void resized() override;
     void timerCallback() override;
     void sliderValueChanged(juce::Slider* slider) override;
+    
+    GetFunFreq getFunFreq;
 
 private:
     
-    const int numParticles {100};
+    const int numParticles {2064};
+    const int x {100};
     std::vector <std::unique_ptr <Particle>> particles;
     
     juce::Slider nSlider;

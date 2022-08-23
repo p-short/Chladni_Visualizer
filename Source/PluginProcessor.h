@@ -9,6 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "MyFFT.h"
 
 //==============================================================================
 /**
@@ -52,8 +53,11 @@ public:
     //==============================================================================
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
+    
+    std::atomic <float> currentInfo { 0 };
 
 private:
+    MyFFT myFFT;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Chladni_VisualizerAudioProcessor)
 };

@@ -12,9 +12,9 @@
 
 //==============================================================================
 Chladni_VisualizerAudioProcessorEditor::Chladni_VisualizerAudioProcessorEditor (Chladni_VisualizerAudioProcessor& p)
-    : AudioProcessorEditor (&p), audioProcessor (p)
+    : AudioProcessorEditor (&p), getFunFreq(p.currentInfo), audioProcessor (p)
 {
-    for (auto i = 0; i < 1000; i++)
+    for (auto i = 0; i < numParticles; i++)
     {
         particles.push_back(std::make_unique<Particle>());
     }
@@ -32,7 +32,6 @@ Chladni_VisualizerAudioProcessorEditor::Chladni_VisualizerAudioProcessorEditor (
     vSlider.setValue(0.05);
     vSlider.addListener(this);
     addAndMakeVisible(vSlider);
-    
     
     Timer::startTimerHz(60);
     setSize (400, 450);
@@ -66,11 +65,12 @@ void Chladni_VisualizerAudioProcessorEditor::resized()
 
 void Chladni_VisualizerAudioProcessorEditor::timerCallback()
 {
+
     repaint();
-    
+    auto frequency = getFunFreq.getValue() / x;
     for (auto i = 0; i < particles.size(); i++)
     {
-        particles[i]->move(5.f, nSliderVal, vSliderVal);
+        particles[i]->move(frequency, nSliderVal, vSliderVal);
         particles[i]->updateOffsets();
     }
 }
