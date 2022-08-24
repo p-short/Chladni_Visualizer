@@ -16,6 +16,7 @@
 const float pi = 3.14159265359;
 
 //method that produces the shapes for the particle system to follow
+// Chlandni function from addiebarrons JavaScript implementation of Chladni plates, which can be found at this link https://github.com/addiebarron/chladni
 float chladni(float x, float y, float a, float b, float m, float n)
 {
     return a * sin(pi * n * x) * sin(pi * m * y) + b * sin(pi * m * x) * sin(pi * n * y);

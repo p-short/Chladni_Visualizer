@@ -4,6 +4,8 @@
     Particle.cpp
     Created: 18 Aug 2022 11:09:16am
     Author:  Phillip Short
+ 
+ This code has been adapted from addiebarron JavaScript implementation of Chladni plates, which can be found at this link https://github.com/addiebarron/chladni
 
   ==============================================================================
 */

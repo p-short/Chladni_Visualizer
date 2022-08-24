@@ -45,7 +45,7 @@ public:
 
 private:
     
-    const int numParticles {2064};
+    const int numParticles {3000};
     const int x {100};
     std::vector <std::unique_ptr <Particle>> particles;
     

@@ -4,6 +4,8 @@
     MyFFT.h
     Created: 20 Aug 2022 10:43:25am
     Author:  Phillip Short
+ 
+ this FFT code was put together while watching Beats basteln :3s video walkthrough, which can be found here https://www.youtube.com/watch?v=7ldQWYjWinU
 
   ==============================================================================
 */
